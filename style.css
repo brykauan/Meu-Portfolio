@@ -168,11 +168,9 @@
           color: var(--cor-primaria-400);
           transition: all 0.3s ease;
         }
-
-        /* Restante do CSS permanece igual... */
-        /* ===== SEÇÃO HERO ===== */
+        
         .hero {
-          min-height: 100vh;
+          min-height: 92vh;
           display: flex;
           align-items: center;
           justify-content: center;
@@ -488,7 +486,7 @@
 
         .stat-label {
           color: #9ca3af;
-          font-size: 14px;
+          font-size: 16px;
           margin-left: 8px;
         }
 
@@ -683,7 +681,6 @@
           .projeto-card {
             flex: 1 1 calc(50% - 16px);
             min-width: 300px;
-            max-width: 500px;
           }
         }
 
@@ -986,7 +983,7 @@
 
         @media (min-width: 1024px) {
           .contato-socials {
-            align-items: flex-start;
+            align-items: center;
           }
         }
 

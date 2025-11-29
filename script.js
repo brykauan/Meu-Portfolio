@@ -1,19 +1,19 @@
-// navbar toggle
+// Navbar Toggle
 const navToggle = document.getElementById('navToggle');
 const navLinks = document.getElementById('navLinks');
 
 navToggle.addEventListener('click', () => {
-  navLinks.classList.toggle('active');
+    navLinks.classList.toggle('active');
 });
 
-// fechar menu 
+// Fechar menu ao clicar em um link
 document.querySelectorAll('.nav-links a').forEach(link => {
-  link.addEventListener('click', () => {
-    navLinks.classList.remove('active');
-  });
+    link.addEventListener('click', () => {
+        navLinks.classList.remove('active');
+    });
 });
 
-// mudar tema
+// Toggle Tema
 const temaToggle = document.getElementById('temaToggle');
 const body = document.body;
 
@@ -21,35 +21,35 @@ const temaSalvo = localStorage.getItem('tema') || 'roxo';
 body.setAttribute('data-tema', temaSalvo);
 
 temaToggle.addEventListener('click', () => {
-  const temaAtual = body.getAttribute('data-tema');
-  const novoTema = temaAtual === 'roxo' ? 'vermelho' : 'roxo';
-
-  body.setAttribute('data-tema', novoTema);
-  localStorage.setItem('tema', novoTema);
+    const temaAtual = body.getAttribute('data-tema');
+    const novoTema = temaAtual === 'roxo' ? 'vermelho' : 'roxo';
+    
+    body.setAttribute('data-tema', novoTema);
+    localStorage.setItem('tema', novoTema);
 });
 
-// animação barras skills
+// Animação das barras de habilidades
 const barrasSkills = document.querySelectorAll('.skill-bar');
 
 const animarBarrasSkills = () => {
-  barrasSkills.forEach(barra => {
-    const rect = barra.getBoundingClientRect();
-    if (rect.top < window.innerHeight && rect.bottom > 0) {
-      barra.style.width = barra.dataset.width;
-    }
-  });
+    barrasSkills.forEach(barra => {
+        const rect = barra.getBoundingClientRect();
+        if (rect.top < window.innerHeight && rect.bottom > 0) {
+            barra.style.width = barra.dataset.width;
+        }
+    });
 };
 
 window.addEventListener('scroll', animarBarrasSkills);
 window.addEventListener('load', animarBarrasSkills);
 
-// roalgem
+// rolagem suave
 document.querySelectorAll('a[href^="#"]').forEach(link => {
-  link.addEventListener('click', function (e) {
-    e.preventDefault();
-    const alvo = document.querySelector(this.getAttribute('href'));
-    if (alvo) {
-      alvo.scrollIntoView({ behavior: 'smooth' });
-    }
-  });
+    link.addEventListener('click', function (e) {
+        e.preventDefault();
+        const alvo = document.querySelector(this.getAttribute('href'));
+        if (alvo) {
+            alvo.scrollIntoView({ behavior: 'smooth' });
+        }
+    });
 });
