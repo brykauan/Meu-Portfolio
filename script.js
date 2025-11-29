@@ -1,17 +1,6 @@
 // Navbar Toggle
-const navToggle = document.getElementById("navToggle");
 const navLinks = document.getElementById("navLinks");
 
-navToggle.addEventListener("click", () => {
-  navLinks.classList.toggle("active");
-});
-
-// Fechar menu ao clicar em um link
-document.querySelectorAll(".nav-links a").forEach((link) => {
-  link.addEventListener("click", () => {
-    navLinks.classList.remove("active");
-  });
-});
 
 // Toggle Tema
 const temaToggle = document.getElementById("temaToggle");
@@ -42,14 +31,3 @@ const animarBarrasSkills = () => {
 
 window.addEventListener("scroll", animarBarrasSkills);
 window.addEventListener("load", animarBarrasSkills);
-
-// rolagem suave
-document.querySelectorAll('a[href^="#"]').forEach((link) => {
-  link.addEventListener("click", function (e) {
-    e.preventDefault();
-    const alvo = document.querySelector(this.getAttribute("href"));
-    if (alvo) {
-      alvo.scrollIntoView({ behavior: "smooth" });
-    }
-  });
-});
