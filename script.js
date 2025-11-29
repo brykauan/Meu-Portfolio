@@ -1,77 +1,55 @@
-// Função para mudar a cor da página de verde para roxo a cada 2 segundos
-function changeColors() {
-  const colors = ["#008000", "#800080"]; // Verde e Roxo
-  let currentIndex = 0;
+// navbar toggle
+const navToggle = document.getElementById('navToggle');
+const navLinks = document.getElementById('navLinks');
 
-  setInterval(() => {
-    currentIndex = (currentIndex + 1) % colors.length;
-    document.documentElement.style.setProperty("--dynamic-color", colors[currentIndex]);
-  }, 2000);
-}
+navToggle.addEventListener('click', () => {
+  navLinks.classList.toggle('active');
+});
 
-// Efeito de digitar no texto
-function typeWriter() {
-  const titulo = document.querySelector(".inicio h1, .projetos h1 ");
-  if (!titulo) return;
+// fechar menu 
+document.querySelectorAll('.nav-links a').forEach(link => {
+  link.addEventListener('click', () => {
+    navLinks.classList.remove('active');
+  });
+});
 
-  const textoOriginal = titulo.textContent;
-  titulo.innerHTML = "";
+// mudar tema
+const temaToggle = document.getElementById('temaToggle');
+const body = document.body;
 
-  let i = 0;
-  function digitar() {
-    if (i < textoOriginal.length) {
-      titulo.innerHTML =
-        textoOriginal.substring(0, i + 1) + '<span class="cursor">|</span>';
-      i++;
-      setTimeout(digitar, 80);
-    } else {
-      titulo.innerHTML = textoOriginal + '<span class="cursor">|</span>';
+const temaSalvo = localStorage.getItem('tema') || 'roxo';
+body.setAttribute('data-tema', temaSalvo);
+
+temaToggle.addEventListener('click', () => {
+  const temaAtual = body.getAttribute('data-tema');
+  const novoTema = temaAtual === 'roxo' ? 'vermelho' : 'roxo';
+
+  body.setAttribute('data-tema', novoTema);
+  localStorage.setItem('tema', novoTema);
+});
+
+// animação barras skills
+const barrasSkills = document.querySelectorAll('.skill-bar');
+
+const animarBarrasSkills = () => {
+  barrasSkills.forEach(barra => {
+    const rect = barra.getBoundingClientRect();
+    if (rect.top < window.innerHeight && rect.bottom > 0) {
+      barra.style.width = barra.dataset.width;
     }
-  }
-  digitar();
-}
+  });
+};
 
+window.addEventListener('scroll', animarBarrasSkills);
+window.addEventListener('load', animarBarrasSkills);
 
-// apenas para o contato
-// Atualiza o ano atual no rodapé
-function atualizarAno() {
-  const anoElemento = document.getElementById("current-year");
-  if (anoElemento) {
-    anoElemento.textContent = new Date().getFullYear();
-  }
-}
-
-// apenas para o sobre mim
-// Aviso quando clicam no link de download do currículo
-function avisoDownload() {
-  const downloadLink = document.getElementById("downloadLink");
-  if (downloadLink) {
-    downloadLink.addEventListener("click", function () {
-      setTimeout(() => {
-        const aviso = document.getElementById("downloadaviso");
-        if (aviso) {
-          aviso.classList.add("show");
-          setTimeout(() => aviso.classList.remove("show"), 3000);
-        }
-      }, 500);
-    });
-  }
-}
-
-// Inicialização após o DOM carregar
-document.addEventListener("DOMContentLoaded", function () {
-  // Define cor inicial
-  document.documentElement.style.setProperty("--dynamic-color", "#008000");
-
-  // Inicia mudança de cores
-  changeColors();
-
-  // Inicia efeito de digitação
-  typeWriter();
-
-  // Atualiza o ano no rodapé
-  atualizarAno();
-
-  // Configura aviso de download
-  avisoDownload();
+// roalgem
+document.querySelectorAll('a[href^="#"]').forEach(link => {
+  link.addEventListener('click', function (e) {
+    e.preventDefault();
+    const alvo = document.querySelector(this.getAttribute('href'));
+    if (alvo) {
+      alvo.scrollIntoView({ behavior: 'smooth' });
+    }
+  });
 });

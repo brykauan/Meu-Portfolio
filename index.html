@@ -1,68 +1,407 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Meu Portfolio</title>
-    <link rel="stylesheet" href="styles.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bryan Kauan - Desenvolvedor</title>
+    <meta name="description" content="Desenvolvedor Full Stack Júnior criando experiências web modernas e responsivas">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="assets/image.png" type="image/x-icon">
 </head>
 
-<body>
-    <header id="inicio">
-        <div>
-            <nav>
-                <h1>Meu Portfolio</h1>
-                <ul>
-                    <li><a href="index.html"><i class="fas fa-home"></i> Início</a></li>
-                    <li><a href="pages/Sobre Mim/sobremim.html"><i class="fas fa-user"></i> Sobre mim</a></li>
-                    <li><a href="pages/Projetos/projeto.html"><i class="fas fa-briefcase"></i> Projetos</a></li>
-                    <li><a href="pages/Contato/contatos.html"><i class="fas fa-envelope"></i> Contatos</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
-
-    <section class="topo_do_site">
-        <div class="inicio">
-            <h1>Olá! Bem-vindo ao meu Portfolio</h1>
-            <p>
-                Este portfólio foi criado para mostrar minhas habilidades e projetos desenvolvidos na área de
-                tecnologia. Aqui você poderá conhecer um pouco sobre mim, alguns de meus projetos escolares e formas de
-                contato.
-            </p>
-
-            <p>Meu portfólio está organizado em sessões para facilitar sua navegação:</p>
-            <ul>
-                <li><u>Início:</u> Página principal com uma breve introdução.</li>
-                <li><u>Sobre mim:</u> Informações pessoais e um pouco do meu percurso acadêmico.</li>
-                <li><u>Projetos:</u> Uma coleção dos meus projetos mais recentes e relevantes, incluindo descrições e
-                    tecnologias utilizadas.</li>
-                <li><u>Contatos:</u> Formas de entrar em contato comigo, incluindo redes sociais e email.</li>
+<body data-tema="roxo">
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="nav-content">
+            <button class="nav-toggle" id="navToggle">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#habilidades">Habilidades</a></li>
+                <li><a href="#projetos">Projetos</a></li>
+                <li><a href="#contato">Contato</a></li>
             </ul>
+        </div>
+    </nav>
 
-            <p>Explore meu trabalho e fique à vontade para entrar em contato!</p>
+    <!-- Botão Toggle Tema -->
+    <button class="tema-toggle" id="temaToggle" aria-label="Mudar tema">
+        <i class="fas fa-palette"></i>
+    </button>
+
+    <!-- Seção Hero -->
+    <section class="hero">
+        <div class="hero-bg">
+            <div class="hero-glow hero-glow-1"></div>
+            <div class="hero-glow hero-glow-2"></div>
+        </div>
+        <div class="hero-grid"></div>
+
+        <div class="hero-content">
+            <span class="hero-badge">Desenvolvedor Full Stack Júnior</span>
+            <h1 class="hero-title">Bryan <span>Kauan</span></h1>
+            <p class="hero-description">
+                Criando páginas web funcionais e responsivas com foco em desempenho, interatividade e código limpo.
+            </p>
+            <div class="hero-buttons">
+                <a href="#projetos" class="btn btn-primary">Ver Projetos</a>
+                <a href="#contato" class="btn btn-outline">Envie uma Mensagem</a>
+            </div>
+            <div class="hero-socials">
+                <a href="https://github.com/brykauan" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://wa.me/41996861075" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                <a href="https://www.instagram.com/brykauan/" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="#contato"><i class="fas fa-envelope"></i></a>
+            </div>
         </div>
 
-        <div class="minhafoto">
-            <div>
-                <img src="assets/minha-foto2.jpg" alt="minha foto" />
-                <div class="linguagens">
+        <a href="#sobre" class="scroll-indicator">
+            <i class="fas fa-chevron-down"></i>
+        </a>
+    </section>
 
-                    <h2>Habilidades</h2>
-                    <div class="icones-linguagens">
-                        <i class="fab fa-html5" title="HTML"></i>
-                        <i class="fab fa-css3-alt" title="CSS"></i>
-                        <i class="fab fa-js-square" title="JavaScript"></i>
-                        <i class="fab fa-react" title="React Native"></i>
-                        <i class="fas fa-database" title="SQL"></i>
+    <!-- Seção Sobre -->
+    <section id="sobre" class="sobre">
+        <div class="section-line"></div>
+        <div class="container">
+            <div class="sobre-grid">
+                <div>
+                    <span class="section-label">Sobre Mim</span>
+                    <h2 class="section-title">Transformando ideias em <span>Realidade</span></h2>
+                    <p class="sobre-text">
+                        Tenho 17 anos e atuo como desenvolvedor full-stack júnior. Sou apaixonado por tecnologia, curto academia e rock. 
+                        Comecei a programar no ensino médio desenvolvendo projetos pessoais e educacionais, agora busco experiências reais para evoluir 
+                        minhas habilidades. Planejo ingressar na UFPR em Análise e Desenvolvimento de Sistemas.
+                    </p>
+                    <p class="sobre-text">
+                        Atualmente sou jovem aprendiz na empresa Vivo no setor administrativo, onde estou conhecendo o ambiente corporativo. 
+                        Meu foco atual é aperfeiçoar meu JavaScript para em seguida me dedicar ao React e criar interfaces mais modernas 
+                        e responsivas.
+                    </p>
+                    <p class="sobre-text">
+                        Meu objetivo é desenvolver sites e sistemas que sejam realmente úteis, de fácil uso e com um bom custo-benefício. 
+                        Acredito que um código bem estruturado com as tecnologias certas faz toda diferença no resultado final.
+                    </p>
+                    <p class="sobre-text">
+                        Estou disponível para projetos freelance onde eu possa contribuir e aprender ao mesmo tempo. Vamos conversar sobre 
+                        como posso ajudar a transformar suas ideias em realidade!
+                    </p>
+                    <div class="sobre-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">10</span>
+                            <span class="stat-label">Projetos Concluídos</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">1</span>
+                            <span class="stat-label">Projeto Vendido</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">100%</span>
+                            <span class="stat-label">Dedicado</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon"><i class="fas fa-code"></i></div>
+                        <h3 class="feature-title">Código Semântico</h3>
+                        <p class="feature-desc">Desenvolvimento seguindo as melhores práticas e padrões web modernos</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon"><i class="fas fa-mobile-alt"></i></div>
+                        <h3 class="feature-title">Design Responsivo</h3>
+                        <p class="feature-desc">Interfaces que funcionam perfeitamente em todos os dispositivos</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon"><i class="fas fa-rocket"></i></div>
+                        <h3 class="feature-title">Performance</h3>
+                        <p class="feature-desc">Sites otimizados e de carregamento rápido para melhor experiência</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon"><i class="fas fa-lightbulb"></i></div>
+                        <h3 class="feature-title">Aprendizado Contínuo</h3>
+                        <p class="feature-desc">Sempre buscando aprender novas tecnologias e melhorar minhas habilidades
+                        </p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+
+    <!-- Seção Habilidades -->
+    <section id="habilidades" class="habilidades">
+        <div class="container">
+            <div class="habilidades-header">
+                <span class="section-label">Habilidades</span>
+                <h2 class="section-title">Tecnologias & <span>Ferramentas</span></h2>
+            </div>
+            <div class="habilidades-grid">
+                <div class="skill-bars">
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span class="skill-name">HTML5 & CSS3</span>
+                            <span class="skill-percent">95%</span>
+                        </div>
+                        <div class="skill-bar-bg">
+                            <div class="skill-bar" data-width="95%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span class="skill-name">Git & GitHub</span>
+                            <span class="skill-percent">80%</span>
+                        </div>
+                        <div class="skill-bar-bg">
+                            <div class="skill-bar" data-width="80%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span class="skill-name">Supabase/Firebase</span>
+                            <span class="skill-percent">65%</span>
+                        </div>
+                        <div class="skill-bar-bg">
+                            <div class="skill-bar" data-width="65%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span class="skill-name">UI/UX Design</span>
+                            <span class="skill-percent">60%</span>
+                        </div>
+                        <div class="skill-bar-bg">
+                            <div class="skill-bar" data-width="60%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span class="skill-name">JavaScript</span>
+                            <span class="skill-percent">50%</span>
+                        </div>
+                        <div class="skill-bar-bg">
+                            <div class="skill-bar" data-width="50%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span class="skill-name">React</span>
+                            <span class="skill-percent">10%</span>
+                        </div>
+                        <div class="skill-bar-bg">
+                            <div class="skill-bar" data-width="10%"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tech-tags">
+                    <span class="tech-tag">HTML5</span>
+                    <span class="tech-tag">CSS3</span>
+                    <span class="tech-tag">JavaScript</span>
+                    <span class="tech-tag">React</span>
+                    <span class="tech-tag">VS Code</span>
+                    <span class="tech-tag">GitHub</span>
+                    <span class="tech-tag">Design Responsivo</span>
+                    <span class="tech-tag">Git</span>
+                    <span class="tech-tag">Bootstrap</span>
+                    <span class="tech-tag">Supabase</span>
+                    <span class="tech-tag">API REST</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção Projetos -->
+    <section id="projetos" class="projetos">
+        <div class="section-line"></div>
+        <div class="container">
+            <div class="projetos-header">
+                <span class="section-label">Portfólio</span>
+                <h2 class="section-title">Meus <span>Projetos</span></h2>
+            </div>
+            <div class="projetos-grid">
+                <div class="projeto-card">
+                    <div class="projeto-image">
+                        <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?w=800&q=80"
+                            alt="E-commerce Store">
+                        <div class="projeto-overlay"></div>
+                        <span class="projeto-category">Front-end</span>
+                        <div class="projeto-links">
+                            <a href="https://github.com/brykauan" target="_blank" class="projeto-link"><i
+                                    class="fab fa-github"></i></a>
+                            <a href="#" class="projeto-link"><i class="fas fa-external-link-alt"></i></a>
+                        </div>
+                    </div>
+                    <div class="projeto-content">
+                        <div class="projeto-header">
+                            <h3 class="projeto-title">Loja Virtual Moderna</h3>
+                            <i class="fas fa-arrow-up-right-from-square projeto-arrow"></i>
+                        </div>
+                        <p class="projeto-desc">E-commerce responsivo com carrinho de compras, filtros de produtos e
+                            design moderno. Desenvolvido com HTML, CSS e JavaScript puro.</p>
+                        <div class="projeto-tech">
+                            <span>HTML5</span>
+                            <span>CSS3</span>
+                            <span>JavaScript</span>
+                            <span>Responsive</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="projeto-card">
+                    <div class="projeto-image">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80"
+                            alt="Dashboard Analytics">
+                        <div class="projeto-overlay"></div>
+                        <span class="projeto-category">Front-end</span>
+                        <div class="projeto-links">
+                            <a href="https://github.com/brykauan" target="_blank" class="projeto-link"><i
+                                    class="fab fa-github"></i></a>
+                            <a href="#" class="projeto-link"><i class="fas fa-external-link-alt"></i></a>
+                        </div>
+                    </div>
+                    <div class="projeto-content">
+                        <div class="projeto-header">
+                            <h3 class="projeto-title">Dashboard Interativo</h3>
+                            <i class="fas fa-arrow-up-right-from-square projeto-arrow"></i>
+                        </div>
+                        <p class="projeto-desc">Dashboard com gráficos dinâmicos, métricas em tempo real e interface
+                            moderna. Utilizando Chart.js para visualização de dados.</p>
+                        <div class="projeto-tech">
+                            <span>React</span>
+                            <span>Chart.js</span>
+                            <span>CSS3</span>
+                            <span>API</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="projeto-card">
+                    <div class="projeto-image">
+                        <img src="https://images.unsplash.com/photo-1512486130939-2c4f79935e4f?w=800&q=80"
+                            alt="App de Tarefas">
+                        <div class="projeto-overlay"></div>
+                        <span class="projeto-category">Full Stack</span>
+                        <div class="projeto-links">
+                            <a href="https://github.com/brykauan" target="_blank" class="projeto-link"><i
+                                    class="fab fa-github"></i></a>
+                            <a href="#" class="projeto-link"><i class="fas fa-external-link-alt"></i></a>
+                        </div>
+                    </div>
+                    <div class="projeto-content">
+                        <div class="projeto-header">
+                            <h3 class="projeto-title">Gerenciador de Tarefas</h3>
+                            <i class="fas fa-arrow-up-right-from-square projeto-arrow"></i>
+                        </div>
+                        <p class="projeto-desc">Aplicativo web para organização de tarefas com categorias, prazos e
+                            sistema de prioridades. Integração com localStorage.</p>
+                        <div class="projeto-tech">
+                            <span>JavaScript</span>
+                            <span>LocalStorage</span>
+                            <span>CSS3</span>
+                            <span>HTML5</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="projeto-card">
+                    <div class="projeto-image">
+                        <img src="https://images.unsplash.com/photo-1547658719-da2b51169166?w=800&q=80"
+                            alt="Site Portfolio">
+                        <div class="projeto-overlay"></div>
+                        <span class="projeto-category">Front-end</span>
+                        <div class="projeto-links">
+                            <a href="https://github.com/brykauan" target="_blank" class="projeto-link"><i
+                                    class="fab fa-github"></i></a>
+                            <a href="#" class="projeto-link"><i class="fas fa-external-link-alt"></i></a>
+                        </div>
+                    </div>
+                    <div class="projeto-content">
+                        <div class="projeto-header">
+                            <h3 class="projeto-title">Portfólio Pessoal</h3>
+                            <i class="fas fa-arrow-up-right-from-square projeto-arrow"></i>
+                        </div>
+                        <p class="projeto-desc">Site portfolio responsivo com design moderno, animações suaves e
+                            otimizado para SEO. Desenvolvido com foco em performance.</p>
+                        <div class="projeto-tech">
+                            <span>HTML5</span>
+                            <span>CSS3</span>
+                            <span>JavaScript</span>
+                            <span>SEO</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="projetos-more">
+                <a href="https://github.com/brykauan" target="_blank" class="btn-roxo-outline">
+                    Ver Mais no GitHub
+                    <i class="fab fa-github"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção Contato -->
+    <section id="contato" class="contato">
+        <div class="section-line"></div>
+        <div class="container">
+            <div class="contato-header">
+                <span class="section-label">Contato</span>
+                <h2 class="section-title">Envie uma <span>Mensagem</span></h2>
+                <p>Precisando de um projeto ou quer dizer oi? Entre em contato!</p>
+            </div>
+            <div class="contato-grid">
+                <div>
+                    <div class="contato-info">
+                        <a href="mailto:bryankauan00@gmail.com" class="contato-item">
+                            <div class="contato-icon"><i class="fas fa-envelope"></i></div>
+                            <div>
+                                <p class="contato-label">Email</p>
+                                <p class="contato-value">bryankauan00@gmail.com</p>
+                            </div>
+                        </a>
+                        <a href="https://wa.me/5541996861075" target="_blank" class="contato-item">
+                            <div class="contato-icon"><i class="fab fa-whatsapp"></i></div>
+                            <div>
+                                <p class="contato-label">WhatsApp</p>
+                                <p class="contato-value">+55 41 99686-1075</p>
+                            </div>
+                        </a>
+                        <a href="https://goo.gl/maps/your-location" target="_blank" class="contato-item">
+                            <div class="contato-icon"><i class="fas fa-map-marker-alt"></i></div>
+                            <div>
+                                <p class="contato-label">Localização</p>
+                                <p class="contato-value">Curitiba, PR - Brasil</p>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="contato-socials">
+                        <p>Conecte-se comigo</p>
+                        <div class="social-links">
+                            <a href="https://github.com/brykauan" target="_blank" class="social-link"><i
+                                    class="fab fa-github"></i></a>
+                            <a href="https://www.instagram.com/brykauan/" target="_blank" class="social-link"><i
+                                    class="fab fa-instagram"></i></a>
+                            <a href="https://www.linkedin.com/in/" target="_blank" class="social-link"><i
+                                    class="fab fa-linkedin"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Rodapé -->
+    <footer class="rodape">
+        <div class="rodape-content">
+            <p class="rodape-text">© 2025 Bryan Kauan.</p>
+            <p class="rodape-text">17 anos • Curitiba/PR • Disponível para Free-Lances</p>
+        </div>
+    </footer>
+
     <script src="script.js"></script>
 </body>
-
 </html>
